@@ -5,18 +5,18 @@ namespace WolfFighter.UI
 {
     public class UIManager : MonoBehaviour
     {
-        private static UIManager _Instance = null;
+        public static UIManager _Instance = null;
 
         public Canvas canvas = null;
 
-        public GameObject ScoreModule;
-        public GameObject PlayerModule;
-        public GameObject BossModule;
+        public PlayerInfoPanel playerInfoPanel;
+
+
 
         private void Awake()
         {
             _Instance = this;
-            
+            playerInfoPanel = canvas.GetComponentInChildren<PlayerInfoPanel>();
         }
 
         // Use this for initialization

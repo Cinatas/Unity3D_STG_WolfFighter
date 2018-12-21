@@ -43,10 +43,10 @@ namespace WolfFighter.Level1
             eventMap.Add(3, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[1]));
             eventMap.Add(14, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[2]));
             eventMap.Add(28, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[3]));
-            eventMap.Add(40, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[4]));
-            eventMap.Add(55, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[5]));
-            eventMap.Add(70, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[6]));
-            eventMap.Add(100, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[7]));
+            eventMap.Add(47, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[4]));
+            eventMap.Add(63, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[5]));
+            eventMap.Add(65, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[6]));
+            eventMap.Add(96, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[7]));
         }
 
         void Tick()

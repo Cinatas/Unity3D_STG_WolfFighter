@@ -7,9 +7,16 @@ public class GameManager : MonoBehaviour {
 
     public int PlayerIndex;
     public int PlayerWeaponLevel;
+    public float HurtCoolDownTime;
+
 
     private void Awake()
     {
         _Instance = this;
+    }
+
+    private void Start()
+    {
+        HurtCoolDownTime = 1;
     }
 }

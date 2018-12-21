@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UniRx;
+using DG.Tweening;
 namespace WolfFighter.UI.PlayerInfo
 {
     public class HpFrame : MonoBehaviour
@@ -13,6 +14,8 @@ namespace WolfFighter.UI.PlayerInfo
         Image hpValueImage;
         //处于受伤CD时显示
         Image hpFxImage;
+
+        ReactiveProperty<float> tempHp = new ReactiveProperty<float>();
 
         private void Awake()
         {
@@ -25,6 +28,10 @@ namespace WolfFighter.UI.PlayerInfo
         void Start()
         {
             HurtFX(false);
+            tempHp.Subscribe(hp=>
+            {
+                hpValueImage.DOFillAmount(hp, GameManager._Instance.HurtCoolDownTime);
+            });
         }
 
         // Update is called once per frame
@@ -32,7 +39,8 @@ namespace WolfFighter.UI.PlayerInfo
         {
             if (Player.Player._Instance == null)
                 return;
-            hpValueImage.fillAmount = Player.Player._Instance.HpRatio;
+            tempHp.Value = Player.Player._Instance.HpRatio;
+            
         }
 
         public void HurtFX(bool state)

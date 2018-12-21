@@ -108,6 +108,21 @@ namespace WolfFighter.Base
                 }
         }
 
+        public virtual void Heal(int heal)
+        {
+            if (Hp > 0)
+                Hp += heal;
+            if (Hp > 100)
+                Hp = 100;
+        }
+
+        public virtual void Charge(int charge)
+        {
+            MP += charge;
+            if (MP > 100)
+                MP = 100;
+        }
+
         /// <summary>
         /// 死亡
         /// </summary>

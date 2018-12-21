@@ -76,7 +76,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1416171996534316}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.82, y: 5.96, z: 0}
+  m_LocalPosition: {x: 2.47, y: 5.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4571555434891112}
@@ -104,7 +104,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1892426796494440}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6, y: 5.96, z: 0}
+  m_LocalPosition: {x: -2.32, y: 5.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4571555434891112}
@@ -241,11 +241,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelfType: 1
   DestroyFX: {fileID: 1532971269641024, guid: 59428a16d280e7842927ac18defeeceb, type: 2}
+  expBouns: 0
   bulletPrefab: {fileID: 1109439357336308, guid: 8bb39697b0f69e842b9ac6758a77a528,
     type: 2}
   isMirror: 0
   bro: {fileID: 114720942374523024}
   rate: 0.1
+  speed: 1
 --- !u!114 &114720942374523024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -259,11 +261,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelfType: 1
   DestroyFX: {fileID: 0}
+  expBouns: 0
   bulletPrefab: {fileID: 1477684331448424, guid: d6971fbd75eb4164d9ded21ce9fe9ade,
     type: 2}
   isMirror: 1
   bro: {fileID: 114569545245229550}
   rate: 0.1
+  speed: 1
 --- !u!114 &114768672440571168
 MonoBehaviour:
   m_ObjectHideFlags: 1

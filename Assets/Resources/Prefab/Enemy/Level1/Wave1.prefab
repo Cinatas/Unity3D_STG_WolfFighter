@@ -688,6 +688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelfType: 1
   DestroyFX: {fileID: 1116883525115158, guid: a44d11fd04d677a459bfb8a4c202645e, type: 2}
+  expBouns: 500
 --- !u!114 &114093748908346372
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -713,6 +714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelfType: 1
   DestroyFX: {fileID: 1116883525115158, guid: a44d11fd04d677a459bfb8a4c202645e, type: 2}
+  expBouns: 500
 --- !u!114 &114197629532071090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -760,6 +762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelfType: 1
   DestroyFX: {fileID: 1116883525115158, guid: a44d11fd04d677a459bfb8a4c202645e, type: 2}
+  expBouns: 500
 --- !u!114 &114323044574467636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -785,6 +788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelfType: 1
   DestroyFX: {fileID: 1116883525115158, guid: a44d11fd04d677a459bfb8a4c202645e, type: 2}
+  expBouns: 500
 --- !u!114 &114347352652035484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -832,6 +836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelfType: 1
   DestroyFX: {fileID: 1116883525115158, guid: a44d11fd04d677a459bfb8a4c202645e, type: 2}
+  expBouns: 500
 --- !u!114 &114541708176012378
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -913,6 +918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelfType: 1
   DestroyFX: {fileID: 1116883525115158, guid: a44d11fd04d677a459bfb8a4c202645e, type: 2}
+  expBouns: 500
 --- !u!114 &114989500027497040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -926,6 +932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelfType: 1
   DestroyFX: {fileID: 1116883525115158, guid: a44d11fd04d677a459bfb8a4c202645e, type: 2}
+  expBouns: 500
 --- !u!212 &212068252523877714
 SpriteRenderer:
   m_ObjectHideFlags: 1

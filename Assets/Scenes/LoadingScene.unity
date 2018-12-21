@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerIndex: 0
   PlayerWeaponLevel: 0
+  HurtCoolDownTime: 0
 --- !u!1 &1040503820
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,10 +210,8 @@ MonoBehaviour:
   PlayerPrefab: {fileID: 0}
   PlayerBulletPrefabs: []
   PlayerDeadExplodeFX: {fileID: 0}
-  EnemyWave1InLevel1: {fileID: 0}
-  EnemyWave2InLevel1: {fileID: 0}
-  EnemyWave3InLevel1: {fileID: 0}
-  EnemyWave4InLevel1: {fileID: 0}
+  EnemyWavesInLevel1: []
+  BGMs: []
 --- !u!4 &1040503823
 Transform:
   m_ObjectHideFlags: 0

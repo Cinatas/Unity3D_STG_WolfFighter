@@ -15,7 +15,11 @@ namespace WolfFighter.UI.PlayerInfo
             expFrame = this.GetComponent<Image>();
             expValue = this.transform.Find("Value").GetComponent<Image>();
         }
-
+        void Update()
+        {
+            if (Player.Player._Instance == null) return;
+            expValue.fillAmount = Player.Player._Instance.ExpRatio;
+        }
     }
 
 }

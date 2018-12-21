@@ -141,7 +141,7 @@ namespace WolfFighter.Player
             if (isHurtCoolDown)
                 return;
 
-            HurtCoolDown = StartCoroutine(HurtCoolDownProcess(1));
+            HurtCoolDown = StartCoroutine(HurtCoolDownProcess());
             Hp -= damage;
             isHurtCoolDown = true;
             if (OnHurt != null)
@@ -154,11 +154,11 @@ namespace WolfFighter.Player
         }
 
         Coroutine HurtCoolDown;
-        IEnumerator HurtCoolDownProcess(float time)
+        IEnumerator HurtCoolDownProcess()
         {
             //在此打开受伤特效
             HurtFX = StartCoroutine(HurtFxProcess());
-            yield return new WaitForSeconds(time);
+            yield return new WaitForSeconds(GameManager._Instance.HurtCoolDownTime);
             isHurtCoolDown = false;
             StopCoroutine(HurtFX);
             spriteRender.color = new Color(1, 1, 1, 1);
