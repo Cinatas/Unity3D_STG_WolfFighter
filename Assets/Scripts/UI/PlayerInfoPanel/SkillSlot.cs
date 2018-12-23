@@ -69,11 +69,21 @@ namespace WolfFighter.UI.PlayerInfo
 
         public void CastCurrentSkill()
         {
-            if(this.slotState == SkillSlotState.Ready)
+            //进行MP判定
+            int currentMp = Player.Player._Instance.Mp;
+            if(currentMp>= this.currentSkill.mpCost)
             {
-                this.CurrentSkillFunc();
-                this.slotState = SkillSlotState.CoolDowning;
-                StartCoroutine(StartCoolDown());
+                if (this.slotState == SkillSlotState.Ready)
+                {
+                    Player.Player._Instance.CostMp(this.currentSkill.mpCost);
+                    this.CurrentSkillFunc();
+                    this.slotState = SkillSlotState.CoolDowning;
+                    StartCoroutine(StartCoolDown());
+                }
+            }
+            else
+            {
+                //Mp不足
             }
         }
 

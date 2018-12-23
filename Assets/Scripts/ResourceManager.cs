@@ -18,11 +18,15 @@ public class ResourceManager : MonoBehaviour {
 
     [Header("Sound")]
     public AudioClip[] BGMs;
+
+    public Dictionary<string, Texture2D> textureResources;
+
     private void Awake()
     {
         _Instance = this;
         EnemyWavesInLevel1 = new GameObject[100];
         BGMs = new AudioClip[10];
+        textureResources = new Dictionary<string, Texture2D>();
     }
 
     // Use this for initialization
@@ -39,6 +43,7 @@ public class ResourceManager : MonoBehaviour {
 
     public void LoadResources()
     {
+        #region 载入预制体
         progressInt = 0;
         PlayerBulletPrefabs = Resources.LoadAll<GameObject>("Prefab/Bullet/MarisaBullets");
         progressInt += 1;
@@ -58,13 +63,47 @@ public class ResourceManager : MonoBehaviour {
         progressInt += 1;
         EnemyWavesInLevel1[7] = Resources.Load<GameObject>("Prefab/Enemy/Level1/Wave7");
         progressInt += 1;
-
+        #endregion
+        #region 载入音频资源
         BGMs[1] = Resources.Load<AudioClip>("Sound/BGM/Stage1/bgm1");
         progressInt += 1;
+        #endregion
+        #region 载入图片资源        
+        textureResources.Add("c001", LoadNpcTexture("Medea/Caster01a(中)"));
+        progressInt++;
+        textureResources.Add("c002", LoadNpcTexture("Medea/Caster01a(遠)"));
+        progressInt++;
+        textureResources.Add("c003", LoadNpcTexture("Medea/Caster01c(中)"));
+        progressInt++;
+        textureResources.Add("c004", LoadNpcTexture("Medea/Caster01c(遠)"));
+        progressInt++;
+        textureResources.Add("c005", LoadNpcTexture("Medea/Caster01d(中)"));
+        progressInt++;
+        textureResources.Add("c006", LoadNpcTexture("Medea/Caster01d(遠)"));
+        progressInt++;
+        textureResources.Add("c007", LoadNpcTexture("Medea/Caster01f(遠)"));
+        progressInt++;
+        textureResources.Add("c008", LoadNpcTexture("Medea/Caster02a(遠)"));
+        progressInt++;
+        textureResources.Add("c009", LoadNpcTexture("Medea/Caster03a(中)"));
+        progressInt++;
+        textureResources.Add("c010", LoadNpcTexture("Medea/Caster03a(遠)"));
+        progressInt++;
+        textureResources.Add("c011", LoadNpcTexture("Medea/Caster03b(中)"));
+        progressInt++;
+        textureResources.Add("c012", LoadNpcTexture("Medea/Caster03b(遠)"));
+        progressInt++;
+        textureResources.Add("c013", LoadNpcTexture("Medea/Caster05a(近)"));
+        #endregion
     }
 
     void NextScene()
     {
         SceneManager.LoadScene("SampleScene");
+    }
+
+    Texture2D LoadNpcTexture(string path)
+    {
+        return Resources.Load<Texture2D>("Texture/Npc/" + path);
     }
 }

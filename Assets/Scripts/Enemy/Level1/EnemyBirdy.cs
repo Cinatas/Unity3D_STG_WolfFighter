@@ -13,7 +13,7 @@ namespace WolfFighter.Level1
         protected override void Start()
         {
             base.Start();
-            this.Hp = 5;
+            this.Hp = 3;
             this.Speed = 1.5f;
             this.OnDie += () =>
             {

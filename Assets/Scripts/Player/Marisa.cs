@@ -60,7 +60,6 @@ namespace WolfFighter.Player
             base.Start();
             aniCon = this.GetComponentInChildren<Animator>();
             this.Speed = 0.1f;
-            this.Hp = 100;
             this.SetWeapon();
             this.DeadFX = ResourceManager._Instance.PlayerDeadExplodeFX;
             this.OnDie += PlayerDead;

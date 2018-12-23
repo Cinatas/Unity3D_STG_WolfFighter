@@ -27,7 +27,7 @@ namespace WolfFighter.Base
             }
         }
 
-        public int MP
+        public int Mp
         {
             get
             {
@@ -118,9 +118,9 @@ namespace WolfFighter.Base
 
         public virtual void Charge(int charge)
         {
-            MP += charge;
-            if (MP > 100)
-                MP = 100;
+            Mp += charge;
+            if (Mp > 100)
+                Mp = 100;
         }
 
         /// <summary>

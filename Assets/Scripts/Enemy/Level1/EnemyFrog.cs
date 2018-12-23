@@ -11,9 +11,8 @@ namespace WolfFighter.Level1
         protected override void Start()
         {
             base.Start();
-            this.Hp = 100;
-            this.Speed = 1.5f;
-            
+            this.Hp = 10;
+            this.Speed = 1.5f;            
         }
 
         private void Update()

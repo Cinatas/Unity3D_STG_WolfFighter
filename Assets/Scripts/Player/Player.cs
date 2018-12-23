@@ -14,6 +14,7 @@ namespace WolfFighter.Player
 
         private int hp;
         private int mp;
+        private int lv;
 
         private int exp;
         private int expMax = 10000;
@@ -71,10 +72,18 @@ namespace WolfFighter.Player
             playerLO = this.GetComponent<LivingObject>();
         }
 
+        private void Start()
+        {
+            //对于玩家来说，HP MP上限永远是100，lv影响MP的恢复速率
+            lv = 1;
+            playerLO.Hp = 100;
+            playerLO.Mp = 100;
+        }
+
         private void Update()
         {
             hp = playerLO.Hp;
-            mp = playerLO.MP;
+            mp = playerLO.Mp;
         }
 
         public void RecoverHp(int healHp)
@@ -97,9 +106,18 @@ namespace WolfFighter.Player
             }
         }
 
+        public void CostMp(int cost)
+        {
+            print("消耗Mp:" + cost);
+            playerLO.Mp -= cost;
+            if (this.mp < 0)
+                this.mp = 0;
+        }
+
         void ScoreReward()
         {
-            
+            lv++;
+            playerLO.Mp = playerLO.Hp = 100;
         }
     }
 

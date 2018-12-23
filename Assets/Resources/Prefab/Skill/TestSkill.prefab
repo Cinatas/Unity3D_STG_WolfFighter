@@ -53,4 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   cdTime: 5
+  mpCost: 10
   iconCodeName: SkillTest

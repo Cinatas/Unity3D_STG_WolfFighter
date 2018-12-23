@@ -9,6 +9,7 @@ namespace WolfFighter.UI.PlayerInfo
     {
         public Sprite icon;
         public float cdTime;
+        public int mpCost;
         public string iconCodeName;
         protected Texture2D iconTex;
         public UnityAction skillFunc;
@@ -23,8 +24,7 @@ namespace WolfFighter.UI.PlayerInfo
             if (skillFunc != null)
             {
                 skillFunc();
-            }
-            
+            }            
         }
     }
 }
