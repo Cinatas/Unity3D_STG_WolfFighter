@@ -63,6 +63,14 @@ public class ResourceManager : MonoBehaviour {
         progressInt += 1;
         EnemyWavesInLevel1[7] = Resources.Load<GameObject>("Prefab/Enemy/Level1/Wave7");
         progressInt += 1;
+        EnemyWavesInLevel1[8] = Resources.Load<GameObject>("Prefab/Enemy/Level1/Wave8");
+        progressInt += 1;
+        EnemyWavesInLevel1[9] = Resources.Load<GameObject>("Prefab/Enemy/Level1/Wave9");
+        progressInt += 1;
+        EnemyWavesInLevel1[10] = Resources.Load<GameObject>("Prefab/Enemy/Level1/Wave10");
+        progressInt += 1;
+
+
         #endregion
         #region 载入音频资源
         BGMs[1] = Resources.Load<AudioClip>("Sound/BGM/Stage1/bgm1");

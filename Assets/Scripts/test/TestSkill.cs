@@ -26,7 +26,7 @@ namespace WolfFighter.Test
 
         void CastSkillFunc()
         {
-            print("Cast Test Skill!");
+            Player.Player._Instance.RecoverHp(20);
         }
     }
 

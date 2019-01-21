@@ -10,10 +10,14 @@ namespace WolfFighter.Level1
         public GameObject bulletPrefab;
         bool isEnable = false;
         float timer = 0;
+        const float cdStandard = 0.5f;
+        float cd;
+        SpriteRenderer sp;
         protected override void Awake()
         {
             base.Awake();
             this.Hp = 30;
+            sp = this.GetComponent<SpriteRenderer>();
         }
 
         protected override void Start()
@@ -24,6 +28,8 @@ namespace WolfFighter.Level1
             {
                 isEnable = true;
             });
+            cd = 0;
+            StartCoroutine(Exit());
         }
 
         // Update is called once per frame
@@ -34,17 +40,32 @@ namespace WolfFighter.Level1
             timer += Time.deltaTime;
             Vector2 selfPos = new Vector2(2.5f * Mathf.Sin(timer*1.25f), 2 + Mathf.Sin(timer * 1.5f));
             this.transform.position = selfPos;
+            if (cd != 0)
+                cd -= Time.deltaTime;
         }
 
         public override void Hurt(int damage)
         {
             if (!isEnable)
                 return;
+            if (cd > 0)
+                return;
             base.Hurt(damage);
             GameObject bullet = Instantiate(bulletPrefab);
             bullet.transform.position = this.transform.position;
+            cd = cdStandard;
         }
 
+        public IEnumerator Exit()
+        {
+            yield return new WaitForSeconds(20f);
+            this.sp.DOFade(0, 1).onComplete+= ()=>
+            {
+                this.isEnable = false;
+                Destroy(this.gameObject);
+            };
+
+        }
     }
 
 }

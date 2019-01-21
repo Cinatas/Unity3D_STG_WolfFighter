@@ -43,6 +43,7 @@ namespace WolfFighter.UI.PlayerInfo
             {
                 slotState = SkillSlotState.Null;
             }
+            cdImage.fillAmount = 0;
         }
 
         // Update is called once per frame

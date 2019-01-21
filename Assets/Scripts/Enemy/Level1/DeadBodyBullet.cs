@@ -5,7 +5,7 @@ using WolfFighter.Player;
 
 namespace WolfFighter.Level1 {
 
-    public class DeadBodyBullet : EmenyBullet
+    public class DeadBodyBullet : EnemyBullet
     {
         private void FixedUpdate()
         {

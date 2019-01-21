@@ -13,7 +13,7 @@ namespace WolfFighter.Level1
         protected override void Start()
         {
             base.Start();
-            this.Hp = 3;
+            this.Hp = 2;
             this.Speed = 1.5f;
             this.OnDie += () =>
             {
@@ -38,6 +38,14 @@ namespace WolfFighter.Level1
             }
 
             this.transform.Translate(dir * this.Speed * Time.deltaTime);
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Bound"))
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }

@@ -32,8 +32,8 @@ namespace WolfFighter.Level1
         {
             foreach(var i in poses)
             {
-                this.MoveTo(i, 1);
-                yield return new WaitForSeconds(1f);
+                this.MoveTo(i, 0.75f);
+                yield return new WaitForSeconds(0.75f);
 
                 if (Player.Player._Instance != null)
                 {

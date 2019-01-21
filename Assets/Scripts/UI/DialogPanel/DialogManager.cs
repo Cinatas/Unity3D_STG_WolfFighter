@@ -29,16 +29,19 @@ namespace WolfFighter.UI.Dialog
         public void ShowText(string talkStr , float duration)
         {
             bubble.ChangeText(talkStr, duration);
+            bubble.gameObject.SetActive(true);
         }
 
         public void ShowNpcPic(string npcPicCode)
         {
             npc.ChangePic(npcPicCode);
+            npc.gameObject.SetActive(true);
         }
 
-        public void ShutdownAll()
+        public void Hide()
         {
-
+            npc.gameObject.SetActive(false);
+            bubble.gameObject.SetActive(false);
         }
     }
 

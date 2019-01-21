@@ -66,6 +66,8 @@ namespace WolfFighter.Player
             }
         }
 
+        public int Score;
+
         private void Awake()
         {
             _Instance = this;
@@ -78,6 +80,7 @@ namespace WolfFighter.Player
             lv = 1;
             playerLO.Hp = 100;
             playerLO.Mp = 100;
+            Score = 0;
         }
 
         private void Update()
@@ -98,6 +101,7 @@ namespace WolfFighter.Player
 
         public void GainScoreAndExp(int score)
         {
+            Score += score;
             exp += score;
             if (exp > expMax)
             {
