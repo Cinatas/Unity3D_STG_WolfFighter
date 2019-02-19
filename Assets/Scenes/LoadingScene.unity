@@ -210,8 +210,12 @@ MonoBehaviour:
   PlayerPrefab: {fileID: 0}
   PlayerBulletPrefabs: []
   PlayerDeadExplodeFX: {fileID: 0}
+  ClearEnemyAndBulletFX: {fileID: 0}
   EnemyWavesInLevel1: []
+  medeaStageInFX: {fileID: 0}
+  Boss1: {fileID: 0}
   BGMs: []
+  BossBgm1: {fileID: 0}
 --- !u!4 &1040503823
 Transform:
   m_ObjectHideFlags: 0

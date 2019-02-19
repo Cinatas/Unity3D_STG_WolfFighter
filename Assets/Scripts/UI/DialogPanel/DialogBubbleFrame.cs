@@ -11,7 +11,7 @@ namespace WolfFighter.UI.Dialog
         // Use this for initialization
         void Start()
         {
-            bubbleText = this.GetComponent<Text>();
+            bubbleText = this.GetComponentInChildren<Text>();
         }
 
         // Update is called once per frame
@@ -23,7 +23,7 @@ namespace WolfFighter.UI.Dialog
         public void ChangeText(string txt,float duration)
         {
             bubbleText.text = "";
-            bubbleText.DOText(txt, duration);
+            bubbleText.DOText(txt, duration).SetEase(Ease.Linear);
         }
     }
 

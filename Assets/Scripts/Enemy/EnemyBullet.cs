@@ -14,6 +14,11 @@ namespace WolfFighter.Player
                 this.MoveDirection = Vector3.Normalize(dest.position - this.transform.position);
         }
 
+        public void SetTarget(Vector3 dest)
+        {
+                this.MoveDirection = Vector3.Normalize(dest - this.transform.position);
+        }
+
         public void DelayLaunch(float time = 0,bool lockPlayer = false)
         {
             if (lockPlayer)
@@ -30,6 +35,8 @@ namespace WolfFighter.Player
             yield return new WaitForSeconds(delayTime);
             this.MoveSpeed = tempSpeed;
         }
+
+        
 
     }
 

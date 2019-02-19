@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using WolfFighter.UI.Dialog;
+using WolfFighter.UI;
 
 namespace WolfFighter.UI
 {
@@ -14,13 +14,14 @@ namespace WolfFighter.UI
         public PlayerInfoPanel playerInfoPanel;
         public DialogPanel dialogPanel;
         public ScorePanel scorePanel;
-
+        public BossPanel bossPanel;
         private void Awake()
         {
             _Instance = this;
             playerInfoPanel = canvas.GetComponentInChildren<PlayerInfoPanel>();
             dialogPanel = canvas.GetComponentInChildren<DialogPanel>();
             scorePanel = canvas.GetComponentInChildren<ScorePanel>();
+            bossPanel = canvas.GetComponentInChildren<BossPanel>();
         }
 
         // Use this for initialization

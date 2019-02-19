@@ -31,11 +31,11 @@ namespace WolfFighter.UI
             {
                 case DialogType.LeftDialog:
                     LeftDialogManager.ShowNpcPic(picCode);
-                    LeftDialogManager.ShowText(context, 1);
+                    LeftDialogManager.ShowText(context, 3);
                     break;
                 case DialogType.RightDialog:
                     RightDialogManager.ShowNpcPic(picCode);
-                    RightDialogManager.ShowText(context, 1);
+                    RightDialogManager.ShowText(context, 3);
                     break;
                 default:
                     break;

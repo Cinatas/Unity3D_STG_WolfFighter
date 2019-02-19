@@ -185,6 +185,11 @@ namespace WolfFighter.Player
                 Die();
             }
         }
+
+        private void Update()
+        {
+            
+        }
     }
 
 }

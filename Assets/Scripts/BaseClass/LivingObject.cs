@@ -13,7 +13,7 @@ namespace WolfFighter.Base
         private int EnergyPoint;
         private float MoveSpeed;
         protected Rigidbody2D rigid2D;
-
+        private bool isSlowed = false;
         public int Hp
         {
             get
@@ -137,6 +137,23 @@ namespace WolfFighter.Base
                 Instantiate(DestroyFX).transform.position = this.transform.position;
 
             Destroy(this.gameObject);
+        }
+
+        public void SetSpeed(float newValue,float delay)
+        {
+            if (isSlowed)
+                return;
+            float save = this.Speed;
+            this.Speed = newValue;
+            StartCoroutine(SetSpeedAsyc(save, delay));
+            isSlowed = true;
+        }
+        
+        IEnumerator SetSpeedAsyc(float value, float delayTime)
+        {
+            yield return new WaitForSeconds(delayTime);
+            this.Speed = value;
+            isSlowed = false;
         }
     }       
 

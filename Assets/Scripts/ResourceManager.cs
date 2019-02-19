@@ -12,12 +12,20 @@ public class ResourceManager : MonoBehaviour {
     public GameObject PlayerPrefab;
     public GameObject[] PlayerBulletPrefabs;
     public GameObject PlayerDeadExplodeFX;
+    public GameObject ClearEnemyAndBulletFX;
 
     [Header("Waves In Level1")]
     public GameObject[] EnemyWavesInLevel1;
 
+    public GameObject medeaStageInFX;
+
+
+    [Header("Boss In Level1")]
+    public GameObject Boss1;
+
     [Header("Sound")]
     public AudioClip[] BGMs;
+    public AudioClip BossBgm1;
 
     public Dictionary<string, Texture2D> textureResources;
 
@@ -27,6 +35,7 @@ public class ResourceManager : MonoBehaviour {
         EnemyWavesInLevel1 = new GameObject[100];
         BGMs = new AudioClip[10];
         textureResources = new Dictionary<string, Texture2D>();
+        
     }
 
     // Use this for initialization
@@ -69,11 +78,19 @@ public class ResourceManager : MonoBehaviour {
         progressInt += 1;
         EnemyWavesInLevel1[10] = Resources.Load<GameObject>("Prefab/Enemy/Level1/Wave10");
         progressInt += 1;
+        Boss1 = Resources.Load<GameObject>("Prefab/Enemy/Level1/Medea");
+        progressInt += 1;
+        ClearEnemyAndBulletFX = Resources.Load<GameObject>("Prefab/FX/WaveFX");
+        progressInt += 1;
 
+        medeaStageInFX = Resources.Load<GameObject>("Prefab/FX/MedeaStageInFX");
+        progressInt += 1;
 
         #endregion
         #region 载入音频资源
         BGMs[1] = Resources.Load<AudioClip>("Sound/BGM/Stage1/bgm1");
+        progressInt += 1;
+        BossBgm1 = Resources.Load<AudioClip>("Sound/BGM/Stage1/MedeaBgm");
         progressInt += 1;
         #endregion
         #region 载入图片资源        

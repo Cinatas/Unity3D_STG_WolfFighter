@@ -10,11 +10,14 @@ namespace WolfFighter.Base
 {
     public class Enemy : LivingObject
     {
+        public static List<GameObject> currentList = new List<GameObject>();
+
         public int expBouns = 0;
         protected override void Start()
         {
             base.Start();
             this.SelfType = LivingObjectType.Enemy;
+            Enemy.currentList.Add(this.gameObject);
         }
 
         public override void Die()
@@ -33,6 +36,11 @@ namespace WolfFighter.Base
             }
 
             Destroy(this.gameObject);
+        }
+
+        private void OnDestroy()
+        {
+            Enemy.currentList.Remove(this.gameObject);
         }
     }
 }

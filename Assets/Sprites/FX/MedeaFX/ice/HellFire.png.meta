@@ -1,0 +1,436 @@
+fileFormatVersion: 2
+guid: dd507194948e8ce4a8b6b150cb86c9a2
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: HellFire_0
+    21300002: HellFire_1
+    21300004: HellFire_2
+    21300006: HellFire_3
+    21300008: HellFire_4
+    21300010: HellFire_5
+    21300012: HellFire_6
+    21300014: HellFire_7
+    21300016: HellFire_8
+    21300018: HellFire_9
+    21300020: HellFire_10
+    21300022: HellFire_11
+    21300024: HellFire_12
+    21300026: HellFire_13
+    21300028: HellFire_14
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HellFire_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96.333336
+        height: 73
+      alignment: 9
+      pivot: {x: 0.61005306, y: 0.48386335}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed044cc9104100b4aab6782fefe5391b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HellFire_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96.333336
+        height: 73
+      alignment: 9
+      pivot: {x: 0.61820537, y: 0.48655283}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c9043c0f543d3489feb3c87462e19c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HellFire_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96.333336
+        height: 73
+      alignment: 9
+      pivot: {x: 0.63247144, y: 0.48924223}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d6f554391edb4044b5f44bbfc5dd705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HellFire_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96.333336
+        height: 73
+      alignment: 9
+      pivot: {x: 0.6406233, y: 0.48924223}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 246f5954b96f0904781099cf4ac23799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HellFire_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96.333336
+        height: 73
+      alignment: 9
+      pivot: {x: 0.6508132, y: 0.48655283}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af74de428c1ba6498154fe2a86aafb8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HellFire_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96.333336
+        height: 73
+      alignment: 9
+      pivot: {x: 0.66100377, y: 0.48386335}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2faa2b7bbc91a174aa8b166376c50c07
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HellFire_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96.333336
+        height: 73
+      alignment: 9
+      pivot: {x: 0.6732319, y: 0.48924223}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1af048638db61a04396c17ee8d0caf79
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HellFire_7
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96.333336
+        height: 73
+      alignment: 9
+      pivot: {x: 0.68546003, y: 0.48386335}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f8a6d2ec05e9b34b85f1a6a4fd7bde0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HellFire_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96.333336
+        height: 73
+      alignment: 9
+      pivot: {x: 0.69361174, y: 0.48924223}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 212d77a671248e74d842ed70b0d6dcbc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HellFire_9
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 96.333336
+        height: 73
+      alignment: 9
+      pivot: {x: 0.7078781, y: 0.48924223}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c675ee46b8ecd8647ab4f052eeafbced
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HellFire_10
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 96.333336
+        height: 73
+      alignment: 9
+      pivot: {x: 0.7139922, y: 0.48655283}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2ed31830b4ae5e419edba919497c2a6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HellFire_11
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 0
+        width: 96.333336
+        height: 73
+      alignment: 9
+      pivot: {x: 0.7241815, y: 0.48924223}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a50adb8379950c84b975a3a51e1f58b9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HellFire_12
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 96.333336
+        height: 73
+      alignment: 9
+      pivot: {x: 0.7323332, y: 0.48655283}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3633973a6ca3229449257a100cf48f9d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HellFire_13
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 0
+        width: 96.333336
+        height: 73
+      alignment: 9
+      pivot: {x: 0.7486378, y: 0.48655283}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ddbb5183aa33ce4baea36508cfae209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HellFire_14
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 96.333336
+        height: 73
+      alignment: 9
+      pivot: {x: 0.75475186, y: 0.48655283}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf1b8e2cb6af9e48aa811e9c143a426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: cf05b2ae3d9d9974288ae95ce1077646
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

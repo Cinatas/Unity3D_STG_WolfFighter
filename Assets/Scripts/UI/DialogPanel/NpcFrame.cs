@@ -36,6 +36,7 @@ namespace WolfFighter.UI.Dialog
                     Sprite npcPicSprite = Sprite.Create(npcPic, new Rect(0, 0, npcPic.width, npcPic.height), new Vector2(0.5f, 0.5f));
                     npcImg.sprite = npcPicSprite;
                     npcImg.enabled = true;
+                    npcImg.SetNativeSize();
                 } 
             }
         }

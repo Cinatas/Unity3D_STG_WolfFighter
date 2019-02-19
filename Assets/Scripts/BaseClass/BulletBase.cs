@@ -38,7 +38,7 @@ namespace WolfFighter.Base
         /// </summary>
         public float AttackRate;
 
-        private void Hit(LivingObject lo)
+        protected virtual void Hit(LivingObject lo)
         {
             lo.Hurt(this.BulletDamage);
             //还需要生成hit特效

@@ -11,6 +11,6 @@ public class TestOutPutTime : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //print((int)Time.time);
+        print((int)Time.time);
 	}
 }

@@ -59,4 +59,10 @@ public class SoundManager : MonoBehaviour {
         BGM_Manager.clip = ResourceManager._Instance.BGMs[index];
         BGM_Manager.Play();
     }
+
+    public void PlayBGM(AudioClip bgm)
+    {
+        BGM_Manager.clip = bgm;
+        BGM_Manager.Play();
+    }
 }

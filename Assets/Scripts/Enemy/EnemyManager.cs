@@ -5,6 +5,8 @@ using UnityEngine.Events;
 using UniRx;
 using UniRx.Triggers;
 using System;
+using WolfFighter.UI;
+using WolfFighter.Base;
 
 namespace WolfFighter.Level1
 {
@@ -61,7 +63,9 @@ namespace WolfFighter.Level1
             eventMap.Add(134, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[9]));
             eventMap.Add(150, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[10]));
 
-            // SoundManager._Instance.PlayBGM(1);
+            //168
+           // eventMap.Add(5, () => StartCoroutine(MedeaStageIn()));
+            eventMap.Add(168, () => StartCoroutine(MedeaStageIn()));
         }
 
 
@@ -84,6 +88,42 @@ namespace WolfFighter.Level1
         {
             GlobalTimer = (int)Time.time; 
         }
+
+        /// <summary>
+        /// 美狄亚对话+登场
+        /// </summary>
+        IEnumerator MedeaStageIn()
+        {
+            UIManager._Instance.dialogPanel.ShowDialog(DialogType.LeftDialog, "c010", "Another thief casts her covetous eyes on my Book ?");
+            yield return new WaitForSeconds(7);
+            UIManager._Instance.dialogPanel.HideDialog(DialogType.LeftDialog);
+            UIManager._Instance.dialogPanel.ShowDialog(DialogType.LeftDialog, "c008", "Come and show me how good you really are.");
+            yield return new WaitForSeconds(7);
+            UIManager._Instance.dialogPanel.HideDialog(DialogType.LeftDialog);
+
+            //清全屏小怪
+            Instantiate(ResourceManager._Instance.ClearEnemyAndBulletFX).transform.position = new Vector3(0, 2, 0);
+            yield return new WaitForSeconds(1f);
+            RemoveAllEnemy();
+            yield return new WaitForSeconds(1f);
+
+            //Medea登场
+            Instantiate(ResourceManager._Instance.Boss1).transform.position = new Vector3(0, 2, 0);
+        }
+
+        void RemoveAllBullet()
+        {
+
+        }
+
+        void RemoveAllEnemy()
+        {
+            foreach(var i in Enemy.currentList)
+            {
+                i.GetComponent<Enemy>().Die();
+            }
+        }
+
     }
 
 }
