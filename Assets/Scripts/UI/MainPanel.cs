@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 namespace WolfFighter.UI
 {
@@ -36,10 +37,11 @@ namespace WolfFighter.UI
         }
 
         void OnClickStartGameButton()
-        {            
-            StartGamePanel.EnablePanel();
-            StartGamePanel.lastPanel = this;
-            this.DisablePanel();
+        {
+            SceneManager.LoadScene(1);
+            //StartGamePanel.EnablePanel();
+            //StartGamePanel.lastPanel = this;
+            //this.DisablePanel();
         }
 
         void OnClickOptionButton()

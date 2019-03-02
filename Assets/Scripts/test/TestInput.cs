@@ -42,11 +42,6 @@ namespace WolfFighter.Test
             float fire = Input.GetAxis("Fire1");
             if (fire > 0)
                 controller.Fire();
-
-            if (Input.GetKeyDown(KeyCode.X))
-            {
-                controller.UpgradeWeapon();
-            } 
         }
     }
 }

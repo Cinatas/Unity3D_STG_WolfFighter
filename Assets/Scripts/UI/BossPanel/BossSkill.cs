@@ -31,7 +31,7 @@ namespace WolfFighter.UI.Boss
         public void ChangeSkillName(string skillName)
         {
             bossSkillName.text = "";
-            bossSkillName.DOText(skillName, 0.25f);
+            //bossSkillName.DOText(skillName, 0.25f);
         }
 
         /// <summary>

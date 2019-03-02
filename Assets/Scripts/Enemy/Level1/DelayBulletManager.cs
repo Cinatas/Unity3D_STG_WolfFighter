@@ -23,6 +23,7 @@ namespace WolfFighter.Level1
             GameObject bulletObj = Instantiate(bulletPrefabs[bulletIndex]);
             bulletObj.transform.position = pos;
             EnemyBullet bullet = bulletObj.GetComponent<EnemyBullet>();
+            bullet.BulletDamage = 30;
             return bullet;
         }
     }

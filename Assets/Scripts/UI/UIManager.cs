@@ -15,6 +15,7 @@ namespace WolfFighter.UI
         public DialogPanel dialogPanel;
         public ScorePanel scorePanel;
         public BossPanel bossPanel;
+        public CompletePanel compPanel;
         private void Awake()
         {
             _Instance = this;
@@ -22,6 +23,7 @@ namespace WolfFighter.UI
             dialogPanel = canvas.GetComponentInChildren<DialogPanel>();
             scorePanel = canvas.GetComponentInChildren<ScorePanel>();
             bossPanel = canvas.GetComponentInChildren<BossPanel>();
+            compPanel = canvas.GetComponentInChildren<CompletePanel>();
         }
 
         // Use this for initialization

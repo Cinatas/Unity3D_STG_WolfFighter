@@ -49,6 +49,7 @@ namespace WolfFighter.Level1
                 BulletBase bullet = db.GetComponent<BulletBase>();
                 bullet.MoveSpeed = 2;
                 bullet.MoveDirection = delta;
+                bullet.BulletDamage = 15;
             }
             else
             {

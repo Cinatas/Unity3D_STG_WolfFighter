@@ -51,6 +51,7 @@ namespace WolfFighter.Level1
             BulletBase bullet = bulletObj.GetComponent<BulletBase>();
             bullet.MoveSpeed = 3f;
             bullet.MoveDirection = dir;
+            bullet.BulletDamage = 20;
         }
 
 

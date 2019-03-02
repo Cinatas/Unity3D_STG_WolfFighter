@@ -87,6 +87,17 @@ namespace WolfFighter.Player
         {
             hp = playerLO.Hp;
             mp = playerLO.Mp;
+            if(Exp == expMax)
+            {
+                exp = 0;
+                LevelUP();
+            }
+        }
+
+        public void LevelUP()
+        {
+            RecoverHp(100);
+            RecoverMp(100);
         }
 
         public void RecoverHp(int healHp)
@@ -122,6 +133,11 @@ namespace WolfFighter.Player
         {
             lv++;
             playerLO.Mp = playerLO.Hp = 100;
+        }
+
+        public void TestHurtPlayer(int value)
+        {
+            playerLO.Hurt(value);
         }
     }
 

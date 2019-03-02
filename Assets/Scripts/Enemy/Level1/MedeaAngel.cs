@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 namespace WolfFighter.Level1
 {
     public class MedeaAngel : MonoBehaviour
@@ -34,6 +35,21 @@ namespace WolfFighter.Level1
             sp.enabled = true;
         }
 
+        public void MoveTo(Vector3 dest,float duration)
+        {
+            this.transform.DOMove(dest, duration);
+        }
+
+        public void MoveBack(float duration)
+        {
+            this.transform.DOMove(Pos, duration);
+        }
+
+        public void ExitStage()
+        {
+            Instantiate(StageInFX).transform.position = this.transform.position;
+            Destroy(this.gameObject);
+        }
     }
 
 }

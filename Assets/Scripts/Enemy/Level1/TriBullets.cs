@@ -37,6 +37,7 @@ namespace WolfFighter.Level1
             bulletM.MoveDirection = new Vector2(0, -1);
             bulletL.MoveDirection = new Vector2(-1 * Mathf.Sin(Mathf.Deg2Rad * angle), -1 * Mathf.Cos(Mathf.Deg2Rad * angle));
             bulletR.MoveDirection = new Vector2(+1 * Mathf.Sin(Mathf.Deg2Rad * angle), -1 * Mathf.Cos(Mathf.Deg2Rad * angle));
+            bulletM.BulletDamage = bulletL.BulletDamage = bulletR.BulletDamage = 15;
         }
     }
 }

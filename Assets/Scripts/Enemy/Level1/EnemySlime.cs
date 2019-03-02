@@ -25,6 +25,7 @@ namespace WolfFighter.Level1
             //if (Player.Player._Instance != null)
             //    bullet.MoveDirection = Vector3.Normalize(Player.Player._Instance.transform.position - this.transform.position);
             bullet.MoveDirection = Vector3.Normalize(des - this.transform.position);
+            bullet.BulletDamage = 15;
             Destroy(bulletObj, 60);
         }
 

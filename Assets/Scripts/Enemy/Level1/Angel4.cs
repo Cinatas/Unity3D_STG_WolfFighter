@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using WolfFighter.Base;
 using DG.Tweening;
+using WolfFighter.Utility;
+
 namespace WolfFighter.Level1
 {
     public class Angel4 : Enemy
@@ -30,6 +32,7 @@ namespace WolfFighter.Level1
             });
             cd = 0;
             StartCoroutine(Exit());
+            StartCoroutine(Shoot());
         }
 
         // Update is called once per frame
@@ -65,6 +68,19 @@ namespace WolfFighter.Level1
                 Destroy(this.gameObject);
             };
 
+        }
+
+        IEnumerator Shoot()
+        {
+            while (true)
+            {
+                yield return new WaitForSeconds(1);
+                int randomIndex = Random.Range(1, 4);
+                ExplodeBullets bullet = ExplodeBulletsManager._Instance.GenerateExplodeBullet(randomIndex);
+                bullet.transform.position = this.transform.position;
+                bullet.selfExtendSpeed = Mathf.Abs(Mathf.Sin(Time.time) + 2f);
+                bullet.selfRotateSpeed = 10 * Mathf.Sin(Time.time);
+            }
         }
     }
 

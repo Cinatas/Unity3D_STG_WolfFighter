@@ -18,6 +18,7 @@ namespace WolfFighter.Base
             base.Start();
             this.SelfType = LivingObjectType.Enemy;
             Enemy.currentList.Add(this.gameObject);
+            this.expBouns = 100;
         }
 
         public override void Die()

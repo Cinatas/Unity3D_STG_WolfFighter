@@ -5,6 +5,7 @@ using WolfFighter.Base;
 using UniRx;
 using UniRx.Triggers;
 using WolfFighter.Utility;
+using DG.Tweening;
 
 namespace WolfFighter.Player
 {
@@ -50,6 +51,9 @@ namespace WolfFighter.Player
         /// </summary>
         private bool isHurtCoolDown = false;
 
+        public Vector3 spwanPos;
+        public Vector3 standPos;
+
         protected override void Awake()
         {
             base.Awake();
@@ -63,6 +67,7 @@ namespace WolfFighter.Player
             this.SetWeapon();
             this.DeadFX = ResourceManager._Instance.PlayerDeadExplodeFX;
             this.OnDie += PlayerDead;
+            StageIn();
         }
 
         public override void Move(Vector2 deltaPos)
@@ -133,6 +138,7 @@ namespace WolfFighter.Player
         {
             Instantiate(DeadFX).transform.position = this.transform.position;
             Destroy(this.gameObject);
+            GameManager._Instance.GameOver();
         }
 
         public override void Hurt(int damage)
@@ -189,6 +195,13 @@ namespace WolfFighter.Player
         private void Update()
         {
             
+        }
+
+        public void StageIn()
+        {
+            this.transform.position = spwanPos;
+            this.transform.DOMove(standPos, GameManager._Instance.HurtCoolDownTime);
+            HurtCoolDown = StartCoroutine(HurtCoolDownProcess());
         }
     }
 

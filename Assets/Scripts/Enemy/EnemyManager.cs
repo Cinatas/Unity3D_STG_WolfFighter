@@ -18,75 +18,37 @@ namespace WolfFighter.Level1
 
         public static EnemyManager _Instance = null;
 
-        private int globalTimer;
-
-        Dictionary<int, UnityAction> eventMap;
-        //public ReactiveProperty<int> GlobalTimer;
-        //public IntReactiveProperty GlobalTimer;
-
-        public int GlobalTimer
-        {
-            get
-            {
-                return globalTimer;
-            }
-            set
-            {
-                if (globalTimer != value)
-                {
-                    Tick();
-                    globalTimer = value;
-                }
-            }
-        }
-
         private void Awake()
         {
             _Instance = this;
-            eventMap = new Dictionary<int, UnityAction>();
         }
 
         // Use this for initialization
-        void Start()
+        IEnumerator Start()
         {
-            globalTimer = 0;
-
-            eventMap.Add(0, () => SoundManager._Instance.PlayBGM(1));
-            eventMap.Add(4, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[1]));
-            eventMap.Add(15, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[2]));
-            eventMap.Add(29, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[3]));
-            eventMap.Add(48, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[4]));
-            eventMap.Add(65, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[6]));
-            eventMap.Add(97, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[7]));
-            eventMap.Add(115, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[8]));
-            eventMap.Add(132, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[5]));
-            eventMap.Add(134, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[9]));
-            eventMap.Add(150, () => Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[10]));
-
-            //168
-           // eventMap.Add(5, () => StartCoroutine(MedeaStageIn()));
-            eventMap.Add(168, () => StartCoroutine(MedeaStageIn()));
-        }
-
-
-        void Tick()
-        {
-            print("Time = " + GlobalTimer);
-            CheckEvent();
-        }
-
-        void CheckEvent()
-        {
-            UnityAction currentEvent;
-            if (eventMap.TryGetValue(GlobalTimer, out currentEvent))
-            {
-                currentEvent();
-            }
-        }
-
-        private void Update()
-        {
-            GlobalTimer = (int)Time.time; 
+            SoundManager._Instance.PlayBGM(1);
+            yield return new WaitForSeconds(4);
+            Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[1]);
+            yield return new WaitForSeconds(11);
+            Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[2]);
+            yield return new WaitForSeconds(14);
+            Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[3]);
+            yield return new WaitForSeconds(19);
+            Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[4]);
+            yield return new WaitForSeconds(17);
+            Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[6]);
+            yield return new WaitForSeconds(32);
+            Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[7]);
+            yield return new WaitForSeconds(18);
+            Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[8]);
+            yield return new WaitForSeconds(17);
+            Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[5]);
+            yield return new WaitForSeconds(2);
+            Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[9]);
+            yield return new WaitForSeconds(16);
+            Instantiate(ResourceManager._Instance.EnemyWavesInLevel1[10]);
+            yield return new WaitForSeconds(18);
+            StartCoroutine(MedeaStageIn());
         }
 
         /// <summary>
@@ -94,10 +56,10 @@ namespace WolfFighter.Level1
         /// </summary>
         IEnumerator MedeaStageIn()
         {
-            UIManager._Instance.dialogPanel.ShowDialog(DialogType.LeftDialog, "c010", "Another thief casts her covetous eyes on my Book ?");
+            UIManager._Instance.dialogPanel.ShowDialog(DialogType.LeftDialog, "c010", "Welcome to my trail little girl");
             yield return new WaitForSeconds(7);
             UIManager._Instance.dialogPanel.HideDialog(DialogType.LeftDialog);
-            UIManager._Instance.dialogPanel.ShowDialog(DialogType.LeftDialog, "c008", "Come and show me how good you really are.");
+            UIManager._Instance.dialogPanel.ShowDialog(DialogType.LeftDialog, "c008", "Come at me and stay alive");
             yield return new WaitForSeconds(7);
             UIManager._Instance.dialogPanel.HideDialog(DialogType.LeftDialog);
 
@@ -118,7 +80,7 @@ namespace WolfFighter.Level1
 
         void RemoveAllEnemy()
         {
-            foreach(var i in Enemy.currentList)
+            foreach (var i in Enemy.currentList)
             {
                 i.GetComponent<Enemy>().Die();
             }

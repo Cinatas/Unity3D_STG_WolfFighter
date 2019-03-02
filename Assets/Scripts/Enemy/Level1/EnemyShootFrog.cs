@@ -18,12 +18,13 @@ namespace WolfFighter.Level1 {
         {
             while (true)
             {
-                yield return new WaitForSeconds(Random.Range(3f,5f));
+                yield return new WaitForSeconds(Random.Range(1f,3f));
                 GameObject bulletObj = Instantiate(bulletPrefab);
                 bulletObj.transform.position = this.transform.position;
                 bulletObj.AddComponent<FrogBullet>();
                 BulletBase bullet = bulletObj.GetComponent<BulletBase>();
                 bullet.MoveSpeed = 4;
+                bullet.BulletDamage = 20;
                 if (Player.Player._Instance != null)                    
                 bullet.MoveDirection = Vector3.Normalize(Player.Player._Instance.transform.position - this.transform.position);
                 Destroy(bulletObj, 60);

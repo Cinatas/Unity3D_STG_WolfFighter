@@ -18,7 +18,14 @@ namespace WolfFighter.Level1
 
         }
 
-        public void LaunchTriBullet(Vector3 pos,float angle)
+        public void LaunchTriBullet(Vector3 pos, float angle)
+        {
+            TriBullets tri = Instantiate(triPrefab).GetComponent<TriBullets>();
+            tri.transform.position = pos;
+            tri.angle = angle;
+        }
+
+        public void LaunchTriBullet(Vector3 pos, float angle,Vector3 dir)
         {
             TriBullets tri = Instantiate(triPrefab).GetComponent<TriBullets>();
             tri.transform.position = pos;

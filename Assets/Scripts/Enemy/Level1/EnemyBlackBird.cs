@@ -64,6 +64,7 @@ public class EnemyBlackBird : Enemy {
             EnemyBullet bullet = bulletObj.GetComponent<EnemyBullet>();
             bullet.MoveSpeed = 5;            
             bullet.DelayLaunch(1,true);
+            bullet.BulletDamage = 10;
         }
     }
 

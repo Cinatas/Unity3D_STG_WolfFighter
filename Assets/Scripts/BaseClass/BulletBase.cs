@@ -19,6 +19,9 @@ namespace WolfFighter.Base
         public float MoveSpeed;
         public Vector2 MoveDirection;
         public GameObject hitFX;
+
+        public bool isLockDir = true;
+
         protected virtual void Awake()
         {
             rigid2D = this.GetComponent<Rigidbody2D>();
@@ -54,8 +57,11 @@ namespace WolfFighter.Base
             
             this.rigid2D.MovePosition(nextPos);
 
-            float angle = Mathf.Atan2(MoveDirection.y, MoveDirection.x) * Mathf.Rad2Deg;
-            this.transform.localRotation = Quaternion.AngleAxis(angle-90, Vector3.forward);
+            if (isLockDir)
+            {
+                float angle = Mathf.Atan2(MoveDirection.y, MoveDirection.x) * Mathf.Rad2Deg;
+                this.transform.localRotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+            }
         }
         /// <summary>
         /// 触碰到边界后销毁自身

@@ -65,4 +65,14 @@ public class SoundManager : MonoBehaviour {
         BGM_Manager.clip = bgm;
         BGM_Manager.Play();
     }
+
+    public void BGMpause()
+    {
+        BGM_Manager.Pause();
+    }
+
+    public void BGMcontinue()
+    {
+        BGM_Manager.UnPause();
+    }
 }

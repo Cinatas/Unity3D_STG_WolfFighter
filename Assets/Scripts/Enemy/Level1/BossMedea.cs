@@ -64,22 +64,25 @@ namespace WolfFighter.Level1
             Hide();
             if (ResourceManager._Instance.medeaStageInFX != null) 
                 Instantiate(ResourceManager._Instance.medeaStageInFX).transform.position = this.transform.position;
-            Instantiate(poses);
+            //Instantiate(poses);
 
             
-            BossPanel._Instance.hpMax = Hp;
+           // BossPanel._Instance.hpMax = Hp;
             BossPanel._Instance.ChangeBossPanelState(true);
 
             StartCoroutine(Fighting());
 
             SoundManager._Instance.PlayBGM(ResourceManager._Instance.BossBgm1);
+
+            this.PosManager = MedeaPos._Instance;
+
+            GameManager._Instance.BossTimerStart();
         }
 
         // Update is called once per frame
         void Update()
         {
             ResetSelfFace();
-            BossPanel._Instance.BossHp = Hp;
             BossPanel._Instance.ChangeSkillProgress(castProgress);
         }
 
@@ -224,9 +227,9 @@ namespace WolfFighter.Level1
             tempCountF = 0;
             while (tempCountF < 7f)
             {
-                tempCountF += 0.2f;
+                tempCountF += 0.15f;
                 BulletLauncher._Instance.LaunchBullet(PosManager.GetCurrentPosition()).DelayLaunch(0,true);
-                yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.15f);
             }
 
             MoveTo(PosManager.GetLeftTopPos(), 2);
@@ -284,7 +287,7 @@ namespace WolfFighter.Level1
                     int randomIndex = Random.Range(1, 4);
                     ExplodeBullets bullet = ExplodeBulletsManager._Instance.GenerateExplodeBullet(randomIndex);
                     bullet.transform.position = tempPos;
-                    bullet.selfExtendSpeed = Mathf.Abs(Mathf.Sin(Time.time) + 1.5f);
+                    bullet.selfExtendSpeed = Mathf.Abs(Mathf.Sin(Time.time) + 2f);
                     bullet.selfRotateSpeed = 10 * Mathf.Sin(Time.time);
                 });
             }
@@ -313,11 +316,55 @@ namespace WolfFighter.Level1
 
             yield return new WaitForSeconds(1);
 
-            ChangeState(MedeaState.Embarrassed);
-            AngelManager._Instance.GenerateLeftAngel();
-            AngelManager._Instance.GenerateRightAngel();
+            ChangeState(MedeaState.Laugh);
+            MedeaLeftAngel leftAngel = AngelManager._Instance.GenerateLeftAngel();
+            MedeaRightAngel rightAngel = AngelManager._Instance.GenerateRightAngel();
             dcObj.SetActive(true);
 
+            yield return new WaitForSeconds(0.5f);
+            leftAngel.MoveTo(PosManager.GetCenterArea(0.5f), 1);
+            rightAngel.MoveTo(PosManager.GetRightPos(), 1);
+            yield return new WaitForSeconds(1);
+            tempCountF = 0;
+            tempCount = 0;
+            int angelCount = 0;
+            while (tempCountF < 15)
+            {
+                yield return new WaitForSeconds(0.35f);
+                tempCount++;
+                tempCountF += 0.35f;
+                angelCount++;
+
+                if (angelCount >= 2)
+                {
+                    angelCount = 0;
+                    rightAngel.GenerateReaper();
+                }
+                ExplodeBullets bullet = ExplodeBulletsManager._Instance.GenerateExplodeBullet(2);
+                bullet.transform.position = leftAngel.transform.position;
+                bullet.selfRotateSpeed = 0;
+                bullet.selfExtendSpeed = 1;
+                bullet.transform.localEulerAngles = new Vector3(0, 0, tempCount * 10);
+            }
+            yield return new WaitForSeconds(1);   
+            leftAngel.MoveBack(0.5f);
+            rightAngel.MoveBack(0.5f);
+            yield return new WaitForSeconds(1);
+            leftAngel.ExitStage();
+            rightAngel.ExitStage();
+            yield return new WaitForSeconds(1);
+            dcObj.SetActive(false);
+            ChangeState(MedeaState.Embarrassed);
+
+            UIManager._Instance.dialogPanel.ShowDialog(DialogType.LeftDialog, "c010", "Alright,you pass my trail.");
+            yield return new WaitForSeconds(7);
+            UIManager._Instance.dialogPanel.HideDialog(DialogType.LeftDialog);
+
+            //生成一本书，自身退场
+            MoveTo(PosManager.GetExitPos(),2);
+            yield return new WaitForSeconds(3);
+            GameManager._Instance.GameComplete();
+            
         }
         public void MoveTo(Vector2 pos,float duration)
         {

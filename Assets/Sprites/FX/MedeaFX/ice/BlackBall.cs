@@ -95,7 +95,8 @@ namespace WolfFighter.FX
                 ExplodeBullets bullet = ExplodeBulletsManager._Instance.GenerateExplodeBullet(2);
                 bullet.transform.position = this.transform.position;
                 bullet.selfExtendSpeed = 1f;
-                bullet.selfRotateSpeed = 100;
+                bullet.selfRotateSpeed = 50;
+                
             }
         }
     }

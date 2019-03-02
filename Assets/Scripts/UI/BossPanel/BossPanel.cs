@@ -15,8 +15,8 @@ namespace WolfFighter.UI
 
         public static BossPanel _Instance = null;
 
-        public int hpMax;
-        private int hp;
+        public int hpMax = 108;
+        private int hp = 108;
         public int BossHp
         {
             get
@@ -33,6 +33,7 @@ namespace WolfFighter.UI
                 }
             }
         }
+              
 
         private void Awake()
         {
@@ -74,8 +75,9 @@ namespace WolfFighter.UI
         
         void ChangeHpRatio()
         {
-            float ratio = hp / hpMax;
+            float ratio = (float)hp / (float)hpMax;
             bossHp.ChangeHp(ratio);
+            print("Ratio to " + ratio);
         }
 
         public void ChangeSkillName(string skillName)
@@ -91,6 +93,23 @@ namespace WolfFighter.UI
         public void SkillProgressFillInTime(float duration)
         {
             bossSkill.FillSkillProgressInTime(duration);
+        }
+
+        public void StartBossTimer()
+        {
+            //以每秒一点的速度减少HP
+            StartCoroutine(TimerCount());
+        }
+
+        IEnumerator TimerCount()
+        {
+            hp = hpMax;
+            while (true)
+            {
+                hp--;
+                ChangeHpRatio();
+                yield return new WaitForSeconds(1);
+            }
         }
     }
 

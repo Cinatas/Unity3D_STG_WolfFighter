@@ -12,7 +12,7 @@ namespace WolfFighter.Level1
 
         private void Start()
         {
-            this.transform.localEulerAngles = new Vector3(0.1f, 0.1f, 0.1f);
+            this.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
             this.transform.DOScale(1, 1f);
         }
 
@@ -22,8 +22,9 @@ namespace WolfFighter.Level1
             {
                 GameObject obj = collision.gameObject;
                 Vector3 objPos = obj.transform.position;
-                MarisaBullet enemyBullet = obj.GetComponent<MarisaBullet>();
-                if (enemyBullet != null)
+                BulletBase enemyBullet = obj.GetComponent<BulletBase>();
+                MedeaMark mark = obj.GetComponent<MedeaMark>();
+                if (enemyBullet != null && mark== null)
                 {
                     Destroy(enemyBullet.gameObject);
                     Shoot(objPos);
@@ -31,10 +32,16 @@ namespace WolfFighter.Level1
             }
         }
 
+        private void FixedUpdate()
+        {
+            this.transform.Rotate(Vector3.forward, Time.deltaTime * 10);
+        }
+
         void Shoot(Vector3 startPos)
         {
             int randomIndex = Random.Range(0, bullets.Length);
             GameObject bulletObj = Instantiate(bullets[randomIndex]);
+            bulletObj.AddComponent<MedeaMark>();
             bulletObj.transform.position = startPos;
             EnemyBullet bullet = bulletObj.GetComponent<EnemyBullet>();
             bullet.DelayLaunch(1, false);
@@ -42,4 +49,9 @@ namespace WolfFighter.Level1
         }
     }
 
+
+    public class MedeaMark:MonoBehaviour
+    {
+
+    }
 }

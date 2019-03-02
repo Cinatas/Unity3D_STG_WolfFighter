@@ -27,6 +27,7 @@ namespace WolfFighter.level1
             GameObject tempObj = Instantiate(rightAngelPrefab);
             return tempObj.GetComponent<MedeaRightAngel>();
         }
+
     }
 
 }

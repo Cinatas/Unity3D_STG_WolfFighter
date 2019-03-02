@@ -5,23 +5,13 @@ namespace WolfFighter.Level1
 {
     public class MedeaPos : MonoBehaviour
     {
+        public static MedeaPos _Instance = null;
         Transform[] poses;
 
         private void Awake()
         {
+            _Instance = this;
             poses = this.transform.GetComponentsInChildren<Transform>();
-        }
-
-        // Use this for initialization
-        void Start()
-        {
-            BossMedea._Instance.PosManager = this;
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
 
         public Vector3 GetNextPosition()
@@ -67,6 +57,12 @@ namespace WolfFighter.Level1
             return pos.position;
         }
 
+        public Vector3 GetRightPos()
+        {
+            Transform pos = this.transform.Find("RightPos");
+            return pos.position;
+        }
+
         public Vector3 GetTopCenterPos()
         {
             Transform pos = this.transform.Find("TopCenter");
@@ -81,6 +77,12 @@ namespace WolfFighter.Level1
         public Vector3 GetCenterPos()
         {
             Transform pos = this.transform.Find("Center");
+            return pos.position;
+        }
+
+        public Vector3 GetExitPos()
+        {
+            Transform pos = this.transform.Find("ExitPos");
             return pos.position;
         }
     }

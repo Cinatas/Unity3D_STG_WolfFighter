@@ -10,7 +10,7 @@ public class HellFire : EnemyBullet {
     
     protected override void Hit(LivingObject lo)
     {
-        lo.Hurt(this.BulletDamage);
+        lo.Hurt(1);
         //还需要生成hit特效
         if (hitFX != null)
             Instantiate(hitFX).transform.position = this.transform.position;

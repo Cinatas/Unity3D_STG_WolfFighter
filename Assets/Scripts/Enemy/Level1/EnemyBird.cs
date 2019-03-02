@@ -85,6 +85,7 @@ namespace WolfFighter.Level1
                 Vector2 dir = Vector3.Normalize(WolfFighter.Player.Player._Instance.transform.position - this.transform.position);
                 bullet.MoveSpeed = bird.Speed * 2;
                 bullet.MoveDirection = dir;
+                bullet.BulletDamage = 50;
             }
         }
     }
